@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td>StudentId:</td>
+                <td><input type="text" id="studentId" required/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" id="address" name="address" required></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age" name="age" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" id="male" name="gender" value="Male"> Male
+                    <input type="radio" id="female" name="gender" value="Female"> Female
+                    <input type="radio" id="other" name="gender" value="Other"> Other</td>
+            </tr>
+            <tr>
+                <td>Contact:</td>
+                <td><input type="text" id="contact" name="contact" required></td>
+            </tr>
+            <tr><td>Email:</td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+
+        <!-- <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <input type="radio" id="other" name="gender" value="Other"> Other<br><br>
+
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit" onclick="validateForm();"> -->
+    </form>
+
+    <script>
+        function validateForm() {
+            const studentId = document.getElementById("studentId").value;
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const age = document.getElementById("age").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const contact = document.getElementById("contact").value;
+            const email = document.getElementById("email").value;
+
+            // Regular expressions for contact and email validation
+            const contactRegex = /^[0-9]{10}$/;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            // Validate Student ID as a number
+            if (isNaN(studentId)) {
+                alert("Student ID should be a number.");
+                return false;
+            }
+
+            // Validate Age as a positive number
+            if (age < 0 || isNaN(age)) {
+                alert("Age should be a positive number.");
+                return false;
+            }
+
+            // Validate Gender selection
+            if (!gender) {
+                alert("Please select a gender.");
+                return false;
+            }
+
+            // Validate Contact using regular expression
+            if (!contact.match(contactRegex)) {
+                alert("Invalid contact number.");
+                return false;
+            }
+
+            // Validate Email using regular expression
+            if (!email.match(emailRegex)) {
+                alert("Invalid email address.");
+                return false;
+            }
+
+            // All validations passed, form can be submitted
+            alert("Success");
+            return true;
+        }
+    </script>
+</body>
+</html>

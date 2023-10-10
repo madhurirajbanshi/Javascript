@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form name="myForm" >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required minlength="5">
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required>Male
+        <input type="radio" id="female" name="gender" value="Female" required>Female
+        <input type="radio" id="others" name="gender" value="Others" required>Others
+        <br>
+
+        <label>Hobbies:</label>
+        <input type="checkbox" id="sports" name="hobbies" value="Sports" required>Sports
+        <input type="checkbox" id="dancing" name="hobbies" value="Dancing" required>Dancing
+        <input type="checkbox" id="singing" name="hobbies" value="Singing" required>Singing
+        <br>
+
+        <input type="submit" value="Submit" onclick="validateForm()"/>
+    </form>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const genderMale = document.getElementById("male").checked;
+            const genderFemale = document.getElementById("female").checked;
+            const genderOthers = document.getElementById("others").checked;
+            const sportsChecked = document.getElementById("sports").checked;
+            const dancingChecked = document.getElementById("dancing").checked;
+            const singingChecked = document.getElementById("singing").checked;
+
+            if (username.length < 5) {
+                alert("Username should be at least 5 characters long");
+                return false;
+            }
+
+            if (!(genderMale || genderFemale || genderOthers)) {
+                alert("Please select a gender");
+                return false;
+            }
+
+            if (!(sportsChecked || dancingChecked || singingChecked)) {
+                alert("Please select at least one hobby");
+                return false;
+            }
+           
+           
+        }
+       
+    </script>
+</body>
+</html>

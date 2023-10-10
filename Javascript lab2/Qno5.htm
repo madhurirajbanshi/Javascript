@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>
+    function find(){
+        
+            // Get the values of CP and SP using getElementById
+            const a = parseFloat(document.getElementById("CP").value);
+            const b = parseFloat(document.getElementById("SP").value);
+
+            if (a > b) {
+                const loss=a-b;
+                
+                alert("Loss="+ loss);
+            } else if (a < b) { 
+                const profit=b-a;// Use "else if" for a more accurate message
+                alert("Profit="+profit);
+            } else {
+                alert("No Profit, No Loss");
+            }
+}
+
+
+   </script>
+</head>
+
+<body>
+    
+        <form action="">
+            <table>
+                <tr>
+                    <td >Enter CP:</td>
+                    <td><input type="number" id="CP" value=" " /></td> 
+                     </tr>
+                    <tr>
+                        <td>Enter SP:
+                            <td><input type="number" id="SP" value=" "/></td>
+                        </td>
+                    </tr>
+                    <tr><td><input type="button"  name="submit" value="Find" onclick="find()"></td></tr>
+                </table>
+                </form>
+    
+</body>
+
+    <!-- <script>
+function prime(num){
+    if(num<=1){
+        return "Not a prime number";
+    }
+    if (num=3)
+    {
+return "3 is a prime number";
+
+    }
+    if(n%2==0){
+        return "False";
+    }
+    for(i=3;i<num;i++){
+        if(num%i==0){
+            return "false";
+        }
+        else{
+            return "true";
+        }
+    } -->
+    
+<!-- } -->
+    <!-- </script> -->
+<!-- </head>
+<body>
+     -->
+<!-- </body> -->
+</html>

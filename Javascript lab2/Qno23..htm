@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Events Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>jQuery Events Example</h1>
+<form action=""  onsubmit="return form();">
+<button id="clickButton">Click Me</button>
+<input type="text" id="textInput" placeholder="Type something here">
+<div id="hover" style="width: 200px; height: 200px; background-color: lightblue;"></div>
+<p id="output"></p>
+<input type="Submit" name="submit" value="Submit" ></input>
+</form>
+
+<script>
+    $(document).ready(function() {
+        // Click event
+        $("#clickButton").click(function() {
+            alert("Button clicked!");
+        });
+
+        // Mouseover event
+        $("#hover").mouseover(function() {
+            $(this).css("background-color", "lightgreen");
+        });
+
+        // Mouseout event
+        $("#hover").mouseout(function() {
+            $(this).css("background-color", "lightblue");
+        });
+
+        // Keyup event
+        $("#textInput").keyup(function() {
+            var text = $(this).val();
+            $("#output").text("You typed: " + text);
+        });
+    });
+</script>
+
+
+</body>
+</html>

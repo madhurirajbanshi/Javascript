@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw a Line</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="250" height="250"></canvas>
+
+    <script>
+        // Get the canvas element and its context
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set starting and ending points of the line
+        // const X = 50;
+        // const Y = 150;
+        // const endX = 350;
+        // const endY = 150;
+
+        // Draw the line
+        ctx.beginPath();
+        ctx.moveTo(50, 150);
+        ctx.lineTo(200, 100);
+        ctx.strokeStyle = 'green'; // Set line color
+         // Set line width
+        ctx.stroke();
+    </script>
+</body>
+</html>

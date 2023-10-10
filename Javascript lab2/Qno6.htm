@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    function isPrime(number) {
+  // Check if the number is less than 2 (not prime)
+  if (number <= 1) {
+    return false;
+  }
+
+  // Check if the number is 3(prime)
+  if (number === 3) {
+    return true;
+  }
+
+  // Check if the number is even (not prime)
+  if (number % 2 === 0) {
+    return false;
+  }
+
+  // Check for prime by testing divisibility from 3 to the square root of the number
+  for (let i = 3; i <= Math.sqrt(number); i += 2) {
+    if (number % i ==0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Test the function with an odd number
+const number = 17;
+const answer = isPrime(number);
+
+if (answer) {
+  document.write(number + " is a prime number");
+} else {
+  document.write(number + " is not a prime number");
+}
+
+  </script>  
+</body>
+</html>

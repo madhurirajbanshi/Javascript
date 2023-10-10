@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw a Line</title>
+    <style>
+        #canvas {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="250"></canvas>
+
+
+    <script>
+        // Get the canvas element and its context
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set starting and ending points of the line
+       
+
+        // Draw the line
+        ctx.beginPath();
+        ctx.moveTo(50, 100);
+        ctx.lineTo(250,150 );
+        ctx.strokeStyle = 'blue'; // Set line color
+        ctx.lineWidth = 1; // Set line width
+        ctx.stroke();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .p1{
+            height:100px;
+            width:300px;
+            padding:30px;
+            color:blue;
+            font-size:large;
+            border:2px solid #2980b9;
+        }
+        #p2{
+           
+            height:5px;
+            width:110px;
+            padding:20px;
+            font-size:large;
+            border:2px solid #2980b9;
+            
+        }
+        #p3
+        {
+            
+            height:3px;
+            width:120px;
+            padding:20px;
+            border:2px solid #2980b9;
+font-size: large;
+
+
+
+
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+        <div class="p1">
+          <form action=""> 
+            <tr>
+                <td class="p2">Enter any number:</td>
+                <input type="number" id="p2" placeholder="">
+            </tr>
+       
+        <br>
+        <tr>
+            <td><input type="button" id="p3" value="Calculate" onclick="factorial()" /></td>
+        </tr>
+       <br><br>
+      <div id="result">Result is:</div>
+</div>
+</form>
+    </div>
+    <script>
+        // Function to calculate the factorial of a number
+        function factorial(n) {
+            try {
+                // Get user input from the form
+                const userInput = document.getElementById("p2").value;
+
+                // Convert the input to a number
+                const number = parseInt(userInput);
+
+                if (isNaN(number)) {
+                    throw new Error("Invalid input. Please enter a valid number.");
+                } else if (number % 2 === 0) {
+                    throw new Error("Error message");
+                } else {
+                    // Calculate and display the factorial
+                    const result = calculateFactorial(number);
+                    document.getElementById("result").textContent = `Result = ${result}`;
+                }
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        // Function to calculate the factorial
+        function calculateFactorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * calculateFactorial(n - 1);
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description Change</title>
+    <style>
+        #imageContainer {
+            text-align: center;
+        }
+
+        #imageDescription {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img id="image" src="rosi.jpg" alt="Image Description" height="100px">
+        <p id="imageDescription">This is the default image description.</p>
+    </div>
+
+    <script>
+        // Get references to the image and paragraph elements
+        var image = document.getElementById("image");
+        var description = document.getElementById("imageDescription");
+
+        // Define a function to change the description
+        function changeDescription() {
+            description.textContent = "This is the new description when hovering over the image.";
+        }
+
+        // Define a function to revert to the default description
+        function revertDescription() {
+            description.textContent = "This is the default image description.";
+        }
+
+        // Add event listeners for mouseover and mouseout
+        image.addEventListener("mouseover", changeDescription);
+        image.addEventListener("mouseout", revertDescription);
+    </script>
+</body>
+</html>

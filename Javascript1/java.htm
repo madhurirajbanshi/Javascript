@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+ <form action="" name="myform" method="POST">
+ <table>
+ <tr>
+ <td>Name:</td>
+ <td><input type="text" name="name"/></td>
+ </tr>
+ <tr>
+ <td>Address:</td>
+ <td><input type="text" name="address"/></td>
+ </tr>
+ <tr>
+ <td>Age:</td>
+ <td><input type="text" name="age"/></td>
+ </tr>
+ <tr>
+ <td>Gender:</td>
+ <td><input type="radio" name="gender" value="Male" />Male
+ <input type="radio" name="gender" value="Female"/>Female
+ </td>
+ </tr>
+ <tr>
+ <td>Department:</td>
+ <td>
+ <select name="department">
+ <option>IT</option>
+ <option>Account</option>
+ <option>HR</option>
+ </select>
+ </td>
+ </tr>
+ <tr>
+    <td>Shift:</td>
+   <td><input type="checkbox" name="morning" value="Morning" />Morning
+    <input type="checkbox" name="day" value="Day"/>Day
+    </td>
+    </tr>
+    <tr>
+    <td>Contact:</td>
+    <td><input type="text" name="contact"/></td>
+    </tr>
+    <tr>
+    <td>Email:</td>
+    <td><input type="text" name="email"/></td>
+    </tr>
+    </table>
+    <input type="button" name="submit" value="Submit" 
+   onclick="validate();" />
+    </form> 
+    <script>
+    function validate(){
+    let name=document.forms["myform"]["name"].value;
+    let address=document.forms["myform"]["address"].value;
+    let age=document.forms["myform"]["age"].value;
+    //radio
+    let gender=document.forms["myform"]["gender"].value;
+    //checkbox
+    let morning=document.forms["myform"]["morning"];
+    let day=document.forms["myform"]["day"];
+    let contact=document.forms["myform"]["contact"].value;
+    let email=document.forms["myform"]["email"].value;
+    let conreg=/[+][0-9]{2,3}[\-][0-9]{10}/;
+    //let name=document.getElementById("name").value;
+    //isNaN function...
+    if(name=="Haoo" || !isNaN(name))
+    alert("Validate Name!");
+    else if(address=="" || address.length>15)
+    alert("Validate Address!");
+    else if(age=="" || isNaN(age) || age<0 || age>100)
+    alert("Validate Age!");
+    else if(gender=="")
+    alert("Please check Gender!");
+    else if(!(morning.checked || day.checked))
+    alert("Please check checkbox!");
+    else if(!contact.match(conreg))
+    alert("Please input contact in proper format!");
+ //else if(email.match(//))
+ else
+ alert("Success");
+ }
+ </script>   
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            var a,b,c;
+            a=document.getElementById("p1").value;
+            b=document.getElementById("p2").value;
+c=parseInt(a)+parseInt(b);           
+
+alert("Sum="+c);
+
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="">
+        <table  >
+            <tr>
+                <td> <input type=" number" id="p1" /></td>
+                </tr>
+                <tr>
+                <td> <input type=" number" id="p2" /></td>
+            </tr>
+            <tr>
+                <td>
+                <input type="button" name="submit" value="submit" onclick="add()"/>
+            </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

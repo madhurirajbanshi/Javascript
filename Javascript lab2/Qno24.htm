@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="code.js"></script>
+</head>
+<body>
+    <h3>Jquery effect hide() and show()</h3>
+     <script>
+        $(function(){
+        $("#para1").hide();
+        });
+       </script>
+      
+       <body>
+        <p id="para1">This is para1</p>
+       
+        <p>This is para2</p> 
+        <hr>
+         <script> 
+            
+
+            $(function(){
+                $("button").click(function(){
+                    $("p").fadeOut();
+                    
+                    $("button").click(function(){
+                        $("p").fadeIn();
+                    })
+                })
+            });
+        </script>
+        <p>Hello</p>
+        <button>Click</button> 
+         <hr>
+        <h3>Jquery slide Methods</h3>
+        <script> 
+            $( function(){
+             $("#flip").click(function(){
+             $("#panel").slideDown("slow");
+             });
+            });
+            </script>
+            <style> 
+            #panel, #flip {
+             padding: 5px;
+             text-align: center;
+            
+             background-color: #a5db12;
+             border: solid 1px #c3c3c3;
+            }
+            #panel {
+             padding: 50px;
+             display: none;
+            }
+            </style>
+           
+            <body>
+            <div id="flip">Click to slide down panel</div>
+            <div id="panel">Hello world!</div>
+             
+              <hr>
+              <h3>jquery animation</h3>
+             <script> 
+                $( function(){
+                 $("button").click(function(){
+                 $("div").animate({left: '1000px'});
+                 });
+                40
+                });
+                </script> 
+               
+             
+                <button>Start Animation</button>
+               
+                <div 
+                style="background:#4f09b1;height:100px;width:100px;position:absolute
+                ; border-radius: 50%;"></div>
+                </body> 
+                
+                <br><br>
+                <br><br><br><br><br><hr>
+                <h3>jquery stop animation</h3>
+
+                <script> 
+                    $( function(){
+                     $("#flip").click(function(){
+                     $("#panel").slideDown(5000);
+                     });
+                     $("#stop").click(function(){
+                     $("#panel").stop();
+                     });
+                    });
+                    </script>
+                    <style> 
+                    #panel, #flip {
+                     padding: 5px;
+                     font-size: 18px;
+                     text-align: center;
+                     background-color: #555;
+                     color: white;
+                     border: solid 1px #666;
+                     border-radius: 3px;
+                    }
+                    
+                    #panel {
+                     padding: 50px;
+                     display: none;
+                    }
+                    </style>
+                    
+                    
+                    <button id="stop">Stop sliding</button>
+                    <div id="flip">Click to slide down panel</div>
+                    <div id="panel">Hello world</div>
+                    </body> 
+                    
+              
+</html>

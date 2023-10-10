@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Circle Drawing</title>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Circle Drawing</title>
+</head>
+<body>
+  <canvas id="circleCanvas" width="300" height="400"></canvas>
+
+  <script>
+    // Get the canvas element and its context
+    const canvas = document.getElementById('circleCanvas');
+    const context = canvas.getContext('2d');
+
+    // Circle properties
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = 100;
+    const fillColor = 'blue';
+
+    // Draw the circle
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, 2 * 3.14);
+    context.fillStyle = fillColor;
+    context.fill();
+    context.closePath();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="code.js"></script>
+</head>
+<body>
+    <script>
+        const person={
+          "firstname":"Ram",
+          "lastname":"Adhikari",
+          "age":31,
+
+        }
+        const jsonString = JSON.stringify(person);
+        const retrievedPerson = JSON.parse(jsonString);
+let firstname=person.firstname;
+let lastname=person.lastname;
+let age=person.age;
+document.write(firstname+"<br>"+lastname+"<br>"+age);
+
+    </script>
+</body>
+</html>
